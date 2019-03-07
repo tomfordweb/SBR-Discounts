@@ -39,7 +39,6 @@ Quantity
 Amount
 Valid For
 
-grlankjr@complink.net
 
 -----------------------------------------------------------------------
 
