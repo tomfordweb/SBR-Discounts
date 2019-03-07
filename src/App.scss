@@ -1,0 +1,76 @@
+
+
+.App {
+  width: 1000px;
+  margin: 0 auto;
+  header {
+    margin-bottom: 40px;
+  }
+
+
+  .discountForm {
+    border-radius: 5px;
+
+
+    header {
+      margin-bottom: 0;
+    }
+
+   div {
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+
+      label {
+        width: calc(15% - 40px);
+        text-align: right;
+        font-weight: bold;
+        margin-right: 40px;
+      }
+
+      .wrap {
+        width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        margin-bottom: 0;
+      }
+
+    }
+  } // .discountForm
+
+}
+
+footer {
+  margin-top: 20px;
+  &.credits {
+    font-size: 0.7em;
+    margin-top: 60px;
+  }
+}
+
+
+.formHelpText {
+  clear: both;
+  display: block;
+  color: #aaa;
+  font-size: 0.8em;
+}
+
+
+// styling
+pre {
+  background: #efefef;
+  padding: 10px;
+}
+
+input, select {
+  width: 100%;
+}
+
+
+input[type="submit"] {
+  width: auto;
+}
+
+

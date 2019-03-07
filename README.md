@@ -1,3 +1,48 @@
+SBR Discount
+
+Create unique codes which are assigned the value ($5) via the API. Print a list of these unique codes to hand out as the trophy. This shifts the burden of manpower to the recipient, instead of the club to manage. The recipient enters the code at the next event and receives a discount with no further intervention on our end.
+
+
+Post Fields
+uidDiscount 00000000-0000-0000-0000000000000000
+vchDiscountCode deleteme
+decDiscount 5.00
+booPercentage 0
+vchDiscountDescription  dev purposes
+uidEvent
+uidEventType  E45E2796-A916-6BD8-97619EBFDF81E3D6
+intClubMemberType 1024
+intClubMemberType 1
+intClubMemberType 2
+intClubMemberType 256
+intClubMemberType 512
+intClubMemberType 128
+intClubMemberType 64
+intClubMemberType 32
+intClubMemberType 16
+intClubMemberType 8
+intClubMemberType 4
+booRestrictFirstEvent 0
+sntQuantityAvailable  1
+sntMaxRedemptions 1
+mnyThresholdMin 0.00
+mnyDiscountMax  5.00
+dteStart  03/06/1990
+dteEnd  03/07/1990
+
+
+
+Calculator Fields
+
+Description
+Quantity
+Amount
+Valid For
+
+grlankjr@complink.net
+
+-----------------------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
