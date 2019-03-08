@@ -31,7 +31,7 @@ export const Input = ({ name, value, label, type, onChange, helpText }) => (
 function createDiscount() {
   console.log(organizationId, username, password);
   return useAsyncEndpoint(data => ({
-    method: "GET",
+    method: "POST",
     headers: {
       'X-Organization-Id' : organizationId
     },
@@ -40,7 +40,7 @@ function createDiscount() {
       password
     },
     responseType: 'json',
-    // data: data,
+    data: data,
     url: route
   }));
 }
@@ -53,35 +53,44 @@ function DiscountForm({}) {
 
   // first time using hooks!
   const [quantity, setQuantity] = useState(5);
-  const [decDiscount, setDecDiscount] = useState(5);
-  const [vchDiscountDescription, setVchDiscountDescription ] = useState('Dev Purposes');
-  const [dteStart, setDteStart] = useState(new Date());
-  const [dteEnd, setDteEnd] = useState(new Date(oneYrFromNow));
+  const [code, setCode] = useState('FOOBARBAZ');
+  const [amount, setAmount] = useState(5);
+  const [description, setDescription ] = useState('Dev Purposes');
+  const [start, setStart] = useState(new Date());
+  const [end, setEnd] = useState(new Date(oneYrFromNow));
   const [discount, postNewDiscount] = createDiscount();
 
+  /**
+   * Submits a post request to MSR
+   * @return {[type]} [description]
+   */
   function newDiscount() {
     postNewDiscount({
-      uidDiscount: '00000000-0000-0000-0000000000000000',
-      vchDiscountCode: 'deleteme',
-      decDiscount: decDiscount,
-      booPercentage: '0',
-      vchDiscountDescription: vchDiscountDescription,
-      uidEvent: '',
-      uidEventType: 'E45E2796-A916-6BD8-97619EBFDF81E3D6',
-      intClubMemberType: [
-        1024, 1, 2, 256, 512, 128, 64, 32, 16, 8, 4
-      ],
-      booRestrictFirstEvent: '0',
-      sntQuantityAvailable: ' 1',
-      sntMaxRedemptions: '1',
-      mnyThresholdMin: '0.00',
-      mnyDiscountMax: ' 5.00',
-      dteStart: dteStart,
-      dteEnd: dteEnd,
+      code: code,
+      amount: amount,
+      description: description,
+      eventId: '',
+      membertypes: ["Annual","Attendee","Instructor","Chief","Radio Control","Tech","Registration","Grid","Starter","Timing","Safety"],
+      quantity: ' 1',
+      sntMaxRedemptions: '1', // what is this in api talk ??
+      minimum: '0.00',
+      maximum: ' 5.00',
+      start: start,
+      end: end,
     })
   }
+
+
   return (
     <div>
+        <Input
+          name="code"
+          value={code}
+          type="text"
+          onChange={e => setCode(e.target.value)}
+          label="Code"
+          helpText="the discount code"
+        />
         <Input
           name="quantity"
           value={quantity}
@@ -91,33 +100,33 @@ function DiscountForm({}) {
           helpText="The amount of discount codes to create"
         />
         <Input
-          name="decDiscount"
-          value={decDiscount}
+          name="amount"
+          value={amount}
           type="number"
-          onChange={e => setDecDiscount(e.target.value)}
+          onChange={e => setAmount(e.target.value)}
           label="Discount Value"
           helpText="The value of the discount code"
         />
         <Input
-          name="vchDiscountDescription"
-          value={vchDiscountDescription}
+          name="description"
+          value={description}
           type="text"
-          onChange={e => setVchDiscountDescription(e.target.value)}
+          onChange={e => setDescription(e.target.value)}
           label="Description"
           helpText="A description for the discount code."
         />
         <div>
         <label>Valid From</label>
         <DatePicker
-          selected={dteStart}
-          onChange={date => setDteStart(date)}
+          selected={start}
+          onChange={date => setStart(date)}
         />
         </div>
         <div>
         <label>Valid To</label>
         <DatePicker
-          selected={dteEnd}
-          onChange={date => setDteEnd(date)}
+          selected={end}
+          onChange={date => setEnd(date)}
         />
         </div>
 
