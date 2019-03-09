@@ -1,45 +1,93 @@
-
-
 .App {
   width: 1000px;
   margin: 0 auto;
   header {
     margin-bottom: 40px;
   }
+}
 
 
-  .discountForm {
-    border-radius: 5px;
+.form-wrap {
+  max-width: 500px;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.inputWrap {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    width: 100%;
+  }
+}
+
+.discountResponses p {
+  background: #efefef;
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #000;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
 
-    header {
-      margin-bottom: 0;
-    }
-
-   div {
-      margin-bottom: 10px;
-      display: flex;
-      flex-wrap: wrap;
-
-      label {
-        width: calc(15% - 40px);
-        text-align: right;
-        font-weight: bold;
-        margin-right: 40px;
-      }
-
-      .wrap {
-        width: 75%;
-        display: flex;
-        flex-wrap: wrap;
-        align-self: flex-end;
-        margin-bottom: 0;
-      }
-
-    }
-  } // .discountForm
+.discountCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  margin-top: 40px;
+  align-items: flex-start;
+  .printButton {
+    width: 100%;
+  }
 
 }
+
+.discountCard {
+  box-sizing: border-box;
+  width: 33.3%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-top: none;
+  border-left: none;
+  display: inline-block;
+  height: 20%;
+  overflow: hidden;
+  position: relative;
+
+  .delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.4em;
+    color: red;
+    cursor: pointer;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  title {
+    text-decoration: underline;
+  }
+  .code {
+    font-size: 1.6em
+  }
+
+  .end,
+  .description {
+    font-size: 0.8em;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+}
+
 
 footer {
   margin-top: 20px;
@@ -69,8 +117,17 @@ input, select {
 }
 
 
-input[type="submit"] {
-  width: auto;
+button {
+  background: #36B5E5;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:disabled {
+    background: #2D96BF;
+    color: #fff;
+    cursor: not-allowed;
+  }
 }
-
-
