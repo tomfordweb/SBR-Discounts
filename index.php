@@ -5,7 +5,7 @@ Plugin Name: SBR Discounts
 Plugin URI: https://github.com/tomfordweb/SBR-Discounts
 Description: Create discount codes in bulk for the SBR Autocross events. Do not Share! This plugin build is unique to SBR.
 Author: Tom Ford
-Version: 0.9
+Version: 1.1
 Author URI: https://tomfordweb.com
 */
 

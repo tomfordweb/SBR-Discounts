@@ -4,6 +4,8 @@ Create multiple discounts for use at an organizations events using the motorpsor
 
 Enter your username, password, and organization ID in `.env`.
 
+You can put a square "logo" in the public folder to have a watermark for generated coupons.
+
 Use at own risk, this app in its current state has no real security and should only be used by trusted individuals. Using `.env` to store your credentials is unsafe.
 
 -----------------------------------------------------------------------

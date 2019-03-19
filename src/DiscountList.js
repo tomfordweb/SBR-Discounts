@@ -2,18 +2,20 @@ import React, {useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import ReactToPrint from 'react-to-print';
 import './App.scss';
-import sample from './sampleresponse.json';
 import auth from './Auth';
 
 const route = 'https://api.motorsportreg.com/rest/discounts.json';
 
 export const DiscountCard = ({id, amount, end, description, code, onDelete}) => (
  <div className="discountCard">
+    <img src="logo.jpg" />
+
+    <div className="content">
     <p className="title">${ amount } SBR Discount Code</p>
     <p className="code"><strong>{ code }</strong></p>
     <p className="description">{ description }</p>
     <p className="end">{ end && 'Valid Until:' } {end}</p>
-
+    </div>
     <span className="delete" onClick={() => onDelete(id) }>X</span>
  </div>
 )
@@ -36,7 +38,6 @@ export default function DiscountList() {
 
   function deleteDiscount(id) {
     axios({
-      method: "DELETE",
       ...auth,
       responseType: 'json',
       url: `https://api.motorsportreg.com/rest/discounts/${id}`
